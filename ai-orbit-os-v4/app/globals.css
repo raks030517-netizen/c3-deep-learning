@@ -1,0 +1,299 @@
+:root {
+  --text: #f8fafc;
+  --muted: #a9b8cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+  color: var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home3d {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 72% 22%, rgba(124, 58, 237, 0.18), transparent 28%),
+    radial-gradient(circle at 32% 72%, rgba(14, 165, 233, 0.14), transparent 30%),
+    linear-gradient(180deg, #050816 0%, #020617 52%, #01030a 100%);
+}
+
+.spaceBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 1px, transparent 1px),
+    radial-gradient(circle, rgba(180, 215, 255, 0.55) 1px, transparent 1px),
+    radial-gradient(circle, rgba(160, 120, 255, 0.38) 1px, transparent 1px);
+  background-size: 110px 110px, 190px 190px, 320px 320px;
+  opacity: 0.36;
+  animation: starsDrift 120s linear infinite;
+}
+
+@keyframes starsDrift {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-700px);
+  }
+}
+
+.nav3d {
+  position: relative;
+  z-index: 20;
+  width: min(1320px, calc(100% - 44px));
+  height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo3d {
+  font-size: 15px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
+}
+
+.menu3d {
+  display: flex;
+  gap: 8px;
+  padding: 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(8, 14, 28, 0.56);
+  backdrop-filter: blur(18px);
+}
+
+.menu3d a {
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 750;
+  transition: 0.22s ease;
+}
+
+.menu3d a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero3d {
+  position: relative;
+  width: min(1400px, calc(100% - 44px));
+  height: calc(100vh - 72px);
+  margin: 0 auto;
+}
+
+.copy3d {
+  position: absolute;
+  left: 0;
+  top: 38px;
+  z-index: 10;
+  width: 310px;
+  padding: 20px;
+  border-radius: 28px;
+  background: rgba(5, 10, 22, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.24),
+    inset 0 0 26px rgba(255, 255, 255, 0.03);
+}
+
+.copy3d p {
+  margin: 0 0 10px;
+  color: #cde8ff;
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+}
+
+.copy3d h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+  font-weight: 1000;
+}
+
+.copy3d span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.actions3d {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.actions3d a {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.actions3d a:first-child {
+  background: linear-gradient(135deg, #91e7ff, #858cff);
+  box-shadow: 0 0 24px rgba(160, 210, 255, 0.24);
+}
+
+.actions3d a:last-child {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.canvasShell {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: grab;
+}
+
+.canvasShell:active {
+  cursor: grabbing;
+}
+
+.canvasShell canvas {
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+.sunLabel3d {
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.sunLabel3d strong {
+  font-size: 30px;
+  font-weight: 1000;
+  letter-spacing: -0.08em;
+  color: white;
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(255, 255, 255, 0.38);
+}
+
+.sunLabel3d span {
+  margin-top: -2px;
+  color: rgba(255, 247, 237, 0.88);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+}
+
+.planetLabel3d {
+  min-width: 120px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: scale(0.88);
+  transition: 0.18s ease;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9),
+    0 0 12px rgba(255, 255, 255, 0.18);
+}
+
+.planetLabel3d strong {
+  display: block;
+  color: white;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.planetLabel3d span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(226, 232, 240, 0.82);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.planetLabel3d.active {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.32),
+    0 0 32px rgba(220, 240, 255, 0.24);
+  transform: scale(1);
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .nav3d {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    height: auto;
+    padding: 18px 0;
+  }
+
+  .menu3d {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero3d {
+    height: 880px;
+  }
+
+  .copy3d {
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: min(500px, 92%);
+    text-align: center;
+  }
+
+  .actions3d {
+    justify-content: center;
+  }
+
+  .canvasShell {
+    top: 120px;
+  }
+}
